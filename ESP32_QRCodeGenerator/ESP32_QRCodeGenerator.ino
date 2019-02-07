@@ -1,11 +1,11 @@
-/****************************************************
+/********************************************************
  * 
- * LOLIN D32 Pro (based ESP32) WiFi QRCode Generator
+ * WiFi QRCode Generator for LOLIN D32 Pro (based ESP32)
  * 
- ****************************************************/
+ ********************************************************/
 
-#include <Adafruit_GFX.h>    // Core graphics library
-#include "Adafruit_ILI9341.h" // Hardware-specific library
+#include <Adafruit_GFX.h>      // Core graphics library
+#include <Adafruit_ILI9341.h>  // Hardware-specific library
 #include <SPI.h>
 #include <Preferences.h>
 #include <qrcode.h>
@@ -67,12 +67,11 @@ bool isCheckAdvertisingState = false;
 
 // Button Pin
 int buttonPin = 13;
-bool isPressButton = false;
-
 
 // Timing
 long previousMillis = 0;
-long interval = 3000;
+long interval = 5000;
+bool isTimerStarting = false;
 
 
 //
@@ -284,27 +283,43 @@ void loop() {
         actionCharacteristic->notify();
     }
 
-    if ( digitalRead(buttonPin) == LOW ) {
-        isPressButton = true;
+    // Check Button state
+    int currentButtonState = digitalRead(buttonPin);
+    
+    if ( isTimerStarting == true && currentButtonState == HIGH ) {
+        isTimerStarting = false;
+        //Serial.println("__---__");
+    }
+    if ( currentButtonState == LOW && isTimerStarting == false) {   // Start timer
+        isTimerStarting = true;
+        previousMillis = millis();
+        //Serial.println("--___--");
+    }
+    if (isTimerStarting == false) {
+        previousMillis = millis();
     }
 
-    if ( millis() - previousMillis > interval ) {
-        if ( isPressButton && (digitalRead(buttonPin) == LOW) ) {
+
+    //--- Timer: ---
+    if (millis() - previousMillis > interval) {
+        // Check Button state again
+        if ( digitalRead(buttonPin) == LOW) {
             isAdvertising = !isAdvertising;
+            Serial.println("isAdvertising:");
+            Serial.println(isAdvertising);
             
             if ( isAdvertising ) {
                 pAdvertising->start();
             } else {
-                //Serial.println("Stop BLE Advertising.");
                 pAdvertising->stop();
             }
-
             draw_WiFi_QRCode();
         }
-
-        isPressButton = false;
-        previousMillis = millis();
+        isTimerStarting = false;
+        delay(100);
     }
+    //--------------
+
 
     if ( isCheckAdvertisingState ) {
         isCheckAdvertisingState = false;
