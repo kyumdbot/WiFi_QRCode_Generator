@@ -69,12 +69,25 @@
 ![upload-win](imgs/upload_win.png)
 
 
+
 ## § 開啟裝置的 BLE 名稱廣播
 
 按下裝置上的按鈕，大約長按 3 ~ 4 秒，TFT 螢幕下方會出現一行小字的 `Start BLE Advertising...`，表示此裝置已經開始廣播了，這時如果使用一些藍牙裝置掃描軟體，就可以發現會出現上面設定的那個裝置名稱 (例如 `RL_WIFIQR_Generator-1788`)。
 
-**長按按鈕 3 ~ 4 秒：**
+**長按按鈕 3 ~ 4 秒，直到出現 Start BLE Advertising...：**
 ![press-btn](imgs/press_btn.jpg)
+
+
+
+## § 設定 WiFi QR Code
+
+用 PC/Mac 或是 Android 上的 Chrome 網頁瀏覽器開啟此網址： [https://kyumdbot.github.io/app/bleWiFiQR/](https://kyumdbot.github.io/app/bleWiFiQR/)
+
+按下網頁上的 `Scan Bluetooth Devices` 按紐，開始掃描 BLE 裝置：
+![scan-ble](imgs/scan_ble.jpg)
+
+找到裝置名稱，點選裝置，並按下配對。選擇 Authentication Type，填入 SSID 跟 Password 後，按下 `SETUP` 按鈕，等出現 Setup done! 即完成設定。
+![setup-qr](imgs/setup_qr.jpg)
 
 
 
