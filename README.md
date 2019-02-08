@@ -87,6 +87,7 @@
 ![scan-ble](imgs/scan_ble.jpg)
 
 找到裝置名稱，點選裝置，並按下配對。
+
 接著選擇 Authentication Type，填入 SSID 跟 Password 後，按下 `SETUP` 按鈕，等出現 Setup done! 即完成設定。
 
 ![setup-qr](imgs/setup_qr.jpg)
@@ -95,15 +96,19 @@
 
 ## § 停止裝置的 BLE 廣播
 
-QR Code 設定完成後，請務必要停止裝置的 BLE 廣播，這樣才比較不會讓別人偷偷連連到你的裝置。
+QR Code 設定完成後，請務必要停止裝置的 BLE 廣播，這樣才比較不會讓別人偷偷連到你的裝置。
 
-要停止裝置的 BLE 廣播，首先按下 Setup 網頁上的 `Disconnect` 按鈕，中斷 Setup 網頁跟裝置的 BLE 連線，接下來長按按鈕 3 ~ 4 秒，裝置會 Restart (或直接按下 D32 Pro 上的 reset 按鈕，或直接把電源拔掉重插，都有一樣的效果)。
+要停止裝置的 BLE 廣播，首先按下 Setup 網頁上的 `Disconnect` 按鈕，中斷 Setup 網頁跟裝置的 BLE 連線，接下來長按按鈕 3 ~ 4 秒，裝置會 Restart (或是直接按下 D32 Pro 上的 reset 按鈕，或直接把電源拔掉重插，都有一樣的效果)。
 
 (備註：本來在開啟廣播後，再長按按鈕會切換成 Advertising Stop 狀態，但因為日前發現 BLEAdvertising->stop() 不起作用，所以我把程式的 pAdvertising->stop() 改成 ESP.restart()。)
 
 
 
-## §
+## § 用手機掃描 QR Code，快速加入 WiFi
+
+在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code：
+![scan-qr](imgs/scan_qr.jpg)
+![add-wifi](imgs/add_wifi.jpg)
 
 
 ## §
