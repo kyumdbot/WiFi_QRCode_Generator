@@ -16,7 +16,7 @@
 #include <BLE2902.h>
 
 
-
+// Store
 Preferences preferences;
 
 
@@ -63,14 +63,14 @@ BLECharacteristic *actionCharacteristic;
 BLEService *pService;
 BLEAdvertising *pAdvertising;
 bool isAdvertising = false;
-bool isCheckAdvertisingState = false;
+
 
 // Button Pin
 int buttonPin = 13;
 
 // Timing
 long previousMillis = 0;
-long interval = 5000;
+long interval = 3000;
 bool isTimerStarting = false;
 
 
@@ -132,7 +132,6 @@ class MyServerCallbacks: public BLEServerCallbacks
 
     void onDisconnect(BLEServer* pServer) {
         Serial.println("Disconnected.");
-        isCheckAdvertisingState = true;
     }
 };
 
@@ -288,12 +287,12 @@ void loop() {
     
     if ( isTimerStarting == true && currentButtonState == HIGH ) {
         isTimerStarting = false;
-        //Serial.println("__---__");
+//        Serial.println("__---__");
     }
     if ( currentButtonState == LOW && isTimerStarting == false) {   // Start timer
         isTimerStarting = true;
         previousMillis = millis();
-        //Serial.println("--___--");
+//        Serial.println("--___--");
     }
     if (isTimerStarting == false) {
         previousMillis = millis();
@@ -302,34 +301,25 @@ void loop() {
 
     //--- Timer: ---
     if (millis() - previousMillis > interval) {
+        isTimerStarting = false;
+        
         // Check Button state again
         if ( digitalRead(buttonPin) == LOW) {
             isAdvertising = !isAdvertising;
-            Serial.println("isAdvertising:");
-            Serial.println(isAdvertising);
             
             if ( isAdvertising ) {
+                Serial.println("Starting Advertising");
                 pAdvertising->start();
+                draw_WiFi_QRCode();
+                
             } else {
-                pAdvertising->stop();
+                //pAdvertising->stop();   //Bugs? Now pAdvertising->stop() is not work.
+                Serial.println("Stop Advertising -> Restart ESP32!");
+                ESP.restart();
             }
-            draw_WiFi_QRCode();
         }
-        isTimerStarting = false;
-        delay(100);
     }
     //--------------
-
-
-    if ( isCheckAdvertisingState ) {
-        isCheckAdvertisingState = false;
-        
-        if ( !isAdvertising ) {
-            delay(100);
-            pAdvertising->stop();
-            Serial.println("Check and Stop advertising.");
-        }
-    }
 }
 
 
