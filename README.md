@@ -2,7 +2,7 @@
 
 ## 材料準備
 
-![材料](imgs/IMG3.JPG)
+![材料](imgs/IMG3.jpg)
 
 1. [LOLIN D32 Pro](https://wiki.wemos.cc/products:d32:d32_pro)
 2. [LOLIN TFT 2.4 Touch Shield](https://wiki.wemos.cc/products:d1_mini_shields:tft_2.4_shield)
