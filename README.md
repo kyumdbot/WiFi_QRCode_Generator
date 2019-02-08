@@ -53,7 +53,7 @@
 
 ## § 修改 BLE DEVICE NAME
 
-找到 ESP32_QRCodeGenerator.ino 程式碼中的這一行：
+找到 ESP32_QRCodeGenerator.ino 程式碼裡的這一行：
 
 ```cpp
 #define MY_BLE_DEVICE_NAME  "RL_WIFIQR_Generator-1788"
@@ -72,7 +72,7 @@
 
 ## § 開啟裝置的 BLE 名稱廣播
 
-按下裝置上的按鈕，大約長按 3 ~ 4 秒，TFT 螢幕下方會出現一行小字的 `Start BLE Advertising...`，表示此裝置已經開始廣播了，這時如果使用一些藍牙裝置掃描軟體，就可以發現會出現上面設定的那個裝置名稱 (例如 `RL_WIFIQR_Generator-1788`)。
+按下裝置上的按鈕，大約長按 3 ~ 4 秒，TFT 螢幕下方會出現一行小字：`Start BLE Advertising...`，表示此裝置已經開始廣播了，這時如果使用一些藍牙掃描軟體，就可以發現會出現上面設定的那個裝置名稱 (例如 `RL_WIFIQR_Generator-1788`)。
 
 **長按按鈕 3 ~ 4 秒，直到出現 Start BLE Advertising...：**
 ![press-btn](imgs/press_btn.jpg)
