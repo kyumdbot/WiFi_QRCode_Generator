@@ -32,8 +32,8 @@
 
 1. 請先閱讀 [arduino-esp32](https://github.com/espressif/arduino-esp32) 的 README.md，照裡頭的步驟安裝好 ESP32 Board 套件。
 2. 然後到 [WEMOS wiki](https://wiki.wemos.cc/downloads) 裡下載 Serial port Driver，並安裝之。
-3. 把 D32 Pro 連接到你的電腦上，然後下載本 Repo 的 ESP32_QRCodeGenerator.ino，並用 Arduino IDE 開啟這個 ino 檔案。
-4. 點選 Arduino IDE 選單：Sketch -> Include Library -> Manage Libraries...，然後安裝以下程式庫：
+3. 把 D32 Pro 連接到電腦上，然後下載本 Repo 的 ESP32_QRCodeGenerator.ino，並用 Arduino IDE 開啟這個 ino 檔案。
+4. 點選 Arduino IDE 選單 -> Sketch -> Include Library -> Manage Libraries...，然後安裝以下程式庫：
 
     - Adafruit GFX Library (by Adafruit)
     - Adafruit ILI9341 (by Adafruit)
@@ -41,17 +41,23 @@
     - QRCode (by Richard Moore)
 
 5. 如果之前有安裝過 BLEPeripheral (by Sandeep Mistry) 這個程式庫，請先刪除這個程式庫，因為裡頭一些 class name 跟 ESP32 BLE 程式庫裡的 class name 有衝突。
-6. 點選 Arduino IDE 選單：Tools -> Board: -> 選擇 `LOLIN D32 PRO`； Upload Speed: -> 選擇 `115200`； Flash Frequency: -> 選擇 `40MHz`。
-7. 點選 Arduino IDE 選單：Tools -> Port，選擇連接 D32 Pro 的 Serial port，Windows 上的名稱通常都是 COM`X`，Mac 上的名稱通常都是 /dev/cu.wchusbserial`XXXX` (X 為數字)。如下圖所示：
+6. 點選 Arduino IDE 選單 -> Tools -> Board: -> 選擇 `LOLIN D32 PRO`； Upload Speed: -> 選擇 `115200`； Flash Frequency: -> 選擇 `40MHz`。
+7. 點選 Arduino IDE 選單 -> Tools -> Port，選擇連接 D32 Pro 的 Serial port，Windows 上的名稱通常都是 COM`X`，Mac 上的名稱通常都是 /dev/cu.wchusbserial`XXXX` (X 為數字)。如下圖所示：
 
-Windows：
+**Windows：**
 ![port-win](imgs/port_win.jpg)
 
-macOS：
+**macOS：**
 ![port-mac](imgs/port_mac.png)
 
 
+## § 修改 BLE DEVICE NAME
 
-## § 
+找到 ESP32_QRCodeGenerator.ino 程式碼中的這一行：
+```cpp
+#define MY_BLE_DEVICE_NAME  "RL_WIFIQR_Generator-1788"
+```
+
+
 
 ## § 
