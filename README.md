@@ -54,10 +54,23 @@
 ## § 修改 BLE DEVICE NAME
 
 找到 ESP32_QRCodeGenerator.ino 程式碼中的這一行：
+
 ```cpp
 #define MY_BLE_DEVICE_NAME  "RL_WIFIQR_Generator-1788"
 ```
 
+把這個裝置名稱修改成自己想要的名字。我的習慣通常是用 **裝置前綴名** + **一組數字** 來組成名稱，以這裡為例，`RL_WIFIQR_Generator` 就是裝置前綴名，後面接一組數字 `-1788`，然後如果需要多台裝置，就改變後面那組數字即可。
 
 
-## § 
+## § 上傳程式到 D32 Pro
+
+按下 Arduino IDE 的 Upload 按鈕，編譯程式並上傳程式到 D32 Pro：
+![upload-win](imgs/upload_win.png)
+
+
+## §
+
+## §
+
+## §
+
