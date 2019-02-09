@@ -121,7 +121,27 @@ iPhone 在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code�
 
 
 
-## § 如何使用 iPhone 設定這個裝置
+## § 如何用 iPhone 設定這個裝置
+
+因為目前 iOS 還不支援 Web Bluetooth，所以無法執行我寫的 Web Setup app，但是可以用像是 LightBlue Explorer 等之類的 app 去讀寫 BLE 裝置，所以還是有辦法可以控制這個 BLE 裝置。
+
+先安裝 [LightBlue Explorer](https://itunes.apple.com/tw/app/lightblue-explorer/id557428110?mt=8) 這個 app，然後執行這個 app。
+
+在首頁裡可以看到附近 BLE 裝置的列表，選擇自己的 WiFi QR Code 裝置 (此例為：`RL_WIFIQR_Generator-1788`)，點選裝置後， LightBlue Explorer app 會連線到 BLE 裝置，接下來可以看到這個裝置提供了那些服務 (會列出服務的 UUID 跟 Characteristic 的) UUID)。
+
+這裡列出 4 個 Characteristic UUID，分別是：
+
+    - Type:     `0x0000DD01`-0000-1000-8000-00805F9B34FB
+    - SSID:     `0x0000DD02`-0000-1000-8000-00805F9B34FB
+    - PASSWORD: `0x0000DD03`-0000-1000-8000-00805F9B34FB
+    - ACTION:   `0x0000DD05`-0000-1000-8000-00805F9B34FB
+
+我們先點選 Type (0x0000DD01) 這個 Characteristic，修改 Type 的值。點選右上角的`Hex`：
+![ios-ble-setup-1](imgs/ios_ble_setup1.jpg)
+
+
+
+
 
 
 ## § 
