@@ -146,7 +146,15 @@ iPhone 在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code�
 
 ![ios-ble-setup-2](imgs/ios_ble_setup2.jpg)
 
+接下來依序設定 SSID (0x0000DD02)、PASSWORD (0x0000DD03)、ACTION (0x0000DD05) 的值，格式都是使用 UTF-8 String。
 
+SSID (0x0000DD02)、PASSWORD (0x0000DD03) 的值就是輸入你的 SSID、Password，ACTION (0x0000DD05) 的值輸入`1`。
+
+> 這裡要注意一點，ACTION (0x0000DD05) 的值要最後輸入，因為當裝置發現 ACTION (0x0000DD05) 的值變成非`0`的值，就會刷新 QR Code，所以要最後輸入。
+
+![ios-ble-setup-3](imgs/ios_ble_setup3.jpg)
+
+ACTION (0x0000DD05) 的值輸入完後，應該可以發現裝置的 TFT 螢幕會閃動一下，這表示 QR Code 已經更新了，這時你可以用手機掃描 QR Code，測試看看是否正確。
 
 
 ## § 
