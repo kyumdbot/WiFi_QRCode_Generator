@@ -127,7 +127,7 @@ iPhone 在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code�
 
 先安裝 [LightBlue Explorer](https://itunes.apple.com/tw/app/lightblue-explorer/id557428110?mt=8) 這個 app，然後執行這個 app。
 
-在首頁裡可以看到附近 BLE 裝置的列表，選擇自己的 WiFi QR Code 裝置 (此例為：`RL_WIFIQR_Generator-1788`)，點選裝置後， LightBlue Explorer app 會連線到 BLE 裝置，接下來可以看到這個裝置提供了那些服務 (會列出服務的 UUID 跟 Characteristic 的) UUID)。
+在首頁裡可以看到附近 BLE 裝置的列表，選擇自己的 WiFi QR Code 裝置 (此例為：`RL_WIFIQR_Generator-1788`)，點選裝置後， LightBlue Explorer app 會連線到 BLE 裝置，接下來可以看到這個裝置提供了那些服務 (會列出服務的 UUID 跟 Characteristic 的 UUID)。
 
 這裡列出 4 個 Characteristic UUID，分別是：
 
@@ -157,7 +157,7 @@ SSID (0x0000DD02)、PASSWORD (0x0000DD03) 的值就是輸入你的 SSID、Passwo
 ACTION (0x0000DD05) 的值輸入完後，應該可以發現裝置的 TFT 螢幕會閃動一下，這表示 QR Code 已經更新了，這時你可以用手機掃描 QR Code，測試看看是否正確。
 
 
-## § 
+## § 製作外殼
 
 
 
