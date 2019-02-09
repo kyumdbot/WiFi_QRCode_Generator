@@ -106,7 +106,10 @@ QR Code 設定完成後，請務必要停止裝置的 BLE 廣播，這樣才比�
 
 ## § 用手機掃描 QR Code，快速加入 WiFi
 
-Android 手機請先到 Play Store 搜尋並安裝 ZXing team 的條碼掃描器，然後用這個 app 掃描 QR Code，即可選擇是否要連接 WiFi。
+Android 手機請先到 Play Store 搜尋並安裝 ZXing team 的條碼掃描器，然後用這個 app 掃描 QR Code，即可選擇是否要連接到 WiFi：
+
+![android-scan-qr](imgs/android_scan_qr.jpg)
+
 
 iPhone 在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code：
 
