@@ -140,7 +140,11 @@ iPhone 在 iOS 11 以後，直接用內建的相機 app，即可掃描 QR Code�
 
 ![ios-ble-setup-1](imgs/ios_ble_setup1.jpg)
 
+然後選擇 Characteristic 的格式為 UTF-8 String。
 
+接下來點選 `Write new value`，若你的 WiFi 是用 WPA/WPA2，請輸入`WPA`；若是用 WEP，請輸入`WEP`：
+
+![ios-ble-setup-2](imgs/ios_ble_setup2.jpg)
 
 
 
