@@ -168,7 +168,7 @@ ACTION (0x0000DD05) 的值輸入完後，應該可以發現裝置的 TFT 螢幕�
 
 ![box3](imgs/box3.jpg)
 
-**大功告成!!**
+把盒子掛到牆上即**大功告成**：
 
 ![box-ok](imgs/box_ok.jpg)
 
