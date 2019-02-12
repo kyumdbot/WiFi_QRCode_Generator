@@ -94,6 +94,10 @@
 
 
 
+> Web 版 Setup app 的原始碼在：[https://github.com/kyumdbot/kyumdbot.github.io/tree/master/app/bleWiFiQR](https://github.com/kyumdbot/kyumdbot.github.io/tree/master/app/bleWiFiQR)，如果你想自行撰寫 app 控制這個裝置，可參考此程式碼。
+
+
+
 ## § 停止裝置的 BLE 廣播
 
 QR Code 設定完成後，請務必要停止裝置的 BLE 廣播，這樣才比較不會讓別人偷偷連到你的裝置。
