@@ -32,7 +32,7 @@
 
 1. 請先閱讀 [arduino-esp32](https://github.com/espressif/arduino-esp32) 的 README.md，照裡頭的步驟安裝好 ESP32 Board 套件。
 2. 然後到 [WEMOS wiki](https://wiki.wemos.cc/downloads) 裡下載 Serial port Driver，並安裝之。
-3. 把 D32 Pro 連接到電腦上，然後下載本 Repo 的 ESP32_QRCodeGenerator.ino，並用 Arduino IDE 開啟這個 ino 檔案。
+3. 把 D32 Pro 連接到電腦上，然後下載本 Repo 的 `ESP32_QRCodeGenerator.ino`，並用 Arduino IDE 開啟這個 ino 檔案。
 4. 點選 Arduino IDE 選單 -> Sketch -> Include Library -> Manage Libraries...，然後安裝以下程式庫：
 
     - Adafruit GFX Library (by Adafruit)
@@ -64,7 +64,7 @@
 
 ## § 編譯並上傳程式
 
-按下 Arduino IDE 的 Upload 按鈕，編譯程式並上傳程式到 D32 Pro：
+按下 Arduino IDE 的 Upload 按鈕，編譯並上傳程式到 D32 Pro：
 
 ![upload-win](imgs/upload_win.png)
 
@@ -74,7 +74,7 @@
 
 按下裝置上的按鈕，大約長按 3 ~ 4 秒，TFT 螢幕下方會出現一行小字：`Start BLE Advertising...`，表示此裝置已經開始廣播了，這時如果使用一些藍牙掃描軟體，就可以發現會出現上面設定的那個裝置名稱 (例如 `RL_WIFIQR_Generator-1788`)。
 
-**長按按鈕 3 ~ 4 秒，直到出現 Start BLE Advertising...：**
+**如下圖，長按按鈕 3 ~ 4 秒，直到出現 Start BLE Advertising...：**
 ![press-btn](imgs/press_btn.jpg)
 
 
