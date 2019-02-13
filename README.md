@@ -161,6 +161,13 @@ SSID (0x0000DD02)、PASSWORD (0x0000DD03) 的值就是輸入你的 SSID、Passwo
 ACTION (0x0000DD05) 的值輸入完後，應該可以發現裝置的 TFT 螢幕會閃動一下，這表示 QR Code 已經更新了，這時你可以用手機掃描 QR Code，測試看看是否正確。
 
 
+> 2019/02/13 更新：我調整了 Web Setup app 的程式碼，讓 Web Setup app 可以在 [WebBLE](https://itunes.apple.com/tw/app/webble/id1193531073?mt=8) 上執行。
+> 如果你想在 iOS 上直接執行 Web Setup app，可以考慮花一些錢購買 WebBLE 這個 app。
+> 
+> 備註：WebBLE 目前只支援 `BluetoothRemoteGATTService.getCharacteristic(uuid)`，不支援 `BluetoothRemoteGATTService.getCharacteristics()`，所以我把原本使用 `.getCharacteristics()` 的地方改用 `.getCharacteristic(uuid)`。
+
+
+
 ## § 製作外殼
 
 先找一個紙盒，並在紙盒上切開一個跟 TFT 螢幕大小相等的洞，然後將 TFT 螢幕放進洞裡，並貼上膠帶固定，如下圖所示：
