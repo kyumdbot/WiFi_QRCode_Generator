@@ -11,6 +11,8 @@
 
 1、2、3 項可以在 [WEMOS.CC](https://www.wemos.cc/) 找到購買網址，第 4 項按鈕在一般的電子材料行即可買到。
 
+> 購買網址：[LOLIN Official Store](https://lolin.aliexpress.com/store/1331105?spm=a2g1y.12024536.pcShopHead_2469632.0)
+
 
 ## § 組裝
 
